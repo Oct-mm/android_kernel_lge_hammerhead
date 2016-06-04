@@ -1,5 +1,5 @@
 #undef TRACE_SYSTEM
-#define TRACE_SYSTEM cpufreq_slim
+#define TRACE_SYSTEM cpufreq_kraken
 
 #if !defined(_TRACE_CPUFREQ_INTERACTIVE_H) || defined(TRACE_HEADER_MULTI_READ)
 #define _TRACE_CPUFREQ_INTERACTIVE_H
@@ -28,13 +28,13 @@ DECLARE_EVENT_CLASS(set,
 	      __entry->actualfreq)
 );
 
-DEFINE_EVENT(set, cpufreq_slim_up,
+DEFINE_EVENT(set, cpufreq_kraken_up,
 	TP_PROTO(u32 cpu_id, unsigned long targfreq,
 		unsigned long actualfreq),
 	TP_ARGS(cpu_id, targfreq, actualfreq)
 );
 
-DEFINE_EVENT(set, cpufreq_slim_down,
+DEFINE_EVENT(set, cpufreq_kraken_down,
 	TP_PROTO(u32 cpu_id, unsigned long targfreq,
 		unsigned long actualfreq),
 	TP_ARGS(cpu_id, targfreq, actualfreq)
@@ -67,14 +67,14 @@ DECLARE_EVENT_CLASS(loadeval,
 		      __entry->curactual, __entry->newtarg)
 );
 
-DEFINE_EVENT(loadeval, cpufreq_slim_target,
+DEFINE_EVENT(loadeval, cpufreq_kraken_target,
 	    TP_PROTO(unsigned long cpu_id, unsigned long load,
 		     unsigned long curtarg, unsigned long curactual,
 		     unsigned long newtarg),
 	    TP_ARGS(cpu_id, load, curtarg, curactual, newtarg)
 );
 
-DEFINE_EVENT(loadeval, cpufreq_slim_already,
+DEFINE_EVENT(loadeval, cpufreq_kraken_already,
 	    TP_PROTO(unsigned long cpu_id, unsigned long load,
 		     unsigned long curtarg, unsigned long curactual,
 		     unsigned long newtarg),
